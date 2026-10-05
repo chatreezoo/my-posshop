@@ -1,0 +1,268 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.pos-container {
+  display: flex;
+  height: 100vh;
+  background-color: #f4f6f9;
+}
+
+/* ฝั่งซ้าย */
+.product-section {
+  flex: 7;
+  padding: 20px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.pos-header h1 {
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.pos-header p {
+  color: #666;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.category-tabs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.cat-btn {
+  padding: 8px 16px;
+  border: none;
+  background-color: #e2e8f0;
+  color: #4a5568;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.2s;
+}
+
+.cat-btn.active, .cat-btn:hover {
+  background-color: #3182ce;
+  color: white;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 15px;
+}
+
+.product-card {
+  background: white;
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  cursor: pointer;
+  text-align: center;
+  transition: transform 0.1s, box-shadow 0.1s;
+  border: 1px solid #e2e8f0;
+}
+
+.product-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  border-color: #3182ce;
+}
+
+.product-icon {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.product-card h3 {
+  font-size: 15px;
+  color: #2d3748;
+  margin-bottom: 5px;
+}
+
+.product-price {
+  color: #3182ce;
+  font-weight: bold;
+}
+
+/* ฝั่งขวา (ตะกร้า) */
+.cart-section {
+  flex: 4;
+  background: white;
+  border-left: 1px solid #e2e8f0;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  box-shadow: -2px 0 10px rgba(0,0,0,0.02);
+}
+
+.cart-section h2 {
+  font-size: 18px;
+  color: #2d3748;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #edf2f7;
+  padding-bottom: 10px;
+}
+
+.cart-items {
+  flex: 1;
+  overflow-y: auto;
+  margin-bottom: 15px;
+}
+
+.empty-cart {
+  color: #a0aec0;
+  text-align: center;
+  margin-top: 40px;
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #edf2f7;
+}
+
+.item-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.item-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: #2d3748;
+}
+
+.item-price {
+  font-size: 13px;
+  color: #718096;
+}
+
+.item-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.item-actions button {
+  width: 24px;
+  height: 24px;
+  border: none;
+  background-color: #edf2f7;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.item-actions button:hover {
+  background-color: #cbd5e0;
+}
+
+/* ส่วนสรุปราคา */
+.cart-summary {
+  border-top: 2px solid #edf2f7;
+  padding-top: 15px;
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  font-size: 16px;
+  color: #4a5568;
+}
+
+.total-price {
+  font-size: 20px;
+  font-weight: bold;
+  color: #2d3748;
+}
+
+.cash-input-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+.cash-input-row input {
+  width: 120px;
+  padding: 6px 10px;
+  border: 1px solid #cbd5e0;
+  border-radius: 6px;
+  font-size: 16px;
+  text-align: right;
+}
+
+.change-row {
+  color: #38a169;
+  font-weight: 600;
+}
+
+.change-price {
+  font-size: 18px;
+}
+
+.checkout-btn {
+  width: 100%;
+  padding: 12px;
+  background-color: #3182ce;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background 0.2s;
+}
+
+.checkout-btn:hover:not(:disabled) {
+  background-color: #2b6cb0;
+}
+
+.checkout-btn:disabled {
+  background-color: #cbd5e0;
+  cursor: not-allowed;
+}
+
+.success-box {
+  background-color: #f0fff4;
+  border: 1px solid #c6f6d5;
+  padding: 10px;
+  border-radius: 8px;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.success-box p {
+  color: #2f855a;
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.new-order-btn {
+  width: 100%;
+  padding: 8px;
+  background-color: #38a169;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.new-order-btn:hover {
+  background-color: #2f855a;
+}
